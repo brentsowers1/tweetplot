@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  term: MyText
+  last_queried: 2011-07-29 11:19:08
+  pages_retrieved: 1
+
+two:
+  term: MyText
+  last_queried: 2011-07-29 11:19:08
+  pages_retrieved: 1

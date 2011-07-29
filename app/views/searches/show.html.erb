@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Term:</b>
+  <%= @search.term %>
+</p>
+
+<p>
+  <b>Last queried:</b>
+  <%= @search.last_queried %>
+</p>
+
+<p>
+  <b>Pages retrieved:</b>
+  <%= @search.pages_retrieved %>
+</p>
+
+
+<%= link_to 'Do Search', do_search_search_path(@search) %>
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

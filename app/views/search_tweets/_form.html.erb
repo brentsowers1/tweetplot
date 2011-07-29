@@ -1,0 +1,37 @@
+<%= form_for(@search_tweet) do |f| %>
+  <% if @search_tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_tweet.errors.count, "error") %> prohibited this search_tweet from being saved:</h2>
+
+      <ul>
+      <% @search_tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :search_id %><br />
+    <%= f.text_field :search_id %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :author_name %><br />
+    <%= f.text_field :author_name %>
+  </div>
+  <div class="field">
+    <%= f.label :author_pic %><br />
+    <%= f.text_field :author_pic %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp %><br />
+    <%= f.time_select :timestamp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

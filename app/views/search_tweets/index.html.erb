@@ -1,0 +1,31 @@
+<h1>Listing search_tweets</h1>
+
+<table>
+  <tr>
+    <th>Search</th>
+    <th>Text</th>
+    <th>Author name</th>
+    <th>Author pic</th>
+    <th>Timestamp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_tweets.each do |search_tweet| %>
+  <tr>
+    <td><%= search_tweet.search_id %></td>
+    <td><%= search_tweet.text %></td>
+    <td><%= search_tweet.author_name %></td>
+    <td><%= search_tweet.author_pic %></td>
+    <td><%= search_tweet.timestamp %></td>
+    <td><%= link_to 'Show', search_tweet %></td>
+    <td><%= link_to 'Edit', edit_search_tweet_path(search_tweet) %></td>
+    <td><%= link_to 'Destroy', search_tweet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Search tweet', new_search_tweet_path %>

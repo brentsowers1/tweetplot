@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  search_id: 1
+  text: MyString
+  author_name: MyString
+  author_pic: MyString
+  timestamp: 2011-07-29 11:33:28
+
+two:
+  search_id: 1
+  text: MyString
+  author_name: MyString
+  author_pic: MyString
+  timestamp: 2011-07-29 11:33:28

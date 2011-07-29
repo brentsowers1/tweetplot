@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Search:</b>
+  <%= @search_tweet.search_id %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @search_tweet.text %>
+</p>
+
+<p>
+  <b>Author name:</b>
+  <%= @search_tweet.author_name %>
+</p>
+
+<p>
+  <b>Author pic:</b>
+  <%= @search_tweet.author_pic %>
+</p>
+
+<p>
+  <b>Timestamp:</b>
+  <%= @search_tweet.timestamp %>
+</p>
+
+
+<%= link_to 'Edit', edit_search_tweet_path(@search_tweet) %> |
+<%= link_to 'Back', search_tweets_path %>
