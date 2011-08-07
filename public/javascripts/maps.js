@@ -32,7 +32,7 @@ function doRequest(checkBounds) {
             for(var i=0; i < tweets.length; i++) {
                 var tweet = tweets[i].search_tweet;
                 if (tweet.location) {
-                    addMarker(tweet.location.y, tweet.location.x, tweet.author_pic, tweet.author_name, tweet.text);
+                    addMarker(tweet.location.y, tweet.location.x, tweet.author_pic, tweet.author_name, tweet.text, tweet.timestamp);
                 }
             }
         }
@@ -51,24 +51,26 @@ function doUpdate() {
             for(var i=0; i < tweets.length; i++) {
                 var tweet = tweets[i].search_tweet;
                 if (tweet.location) {
-                    addMarker(tweet.location.y, tweet.location.x, tweet.author_pic, tweet.author_name, tweet.text);
+                    addMarker(tweet.location.y, tweet.location.x, tweet.author_pic, tweet.author_name, tweet.text, tweet.timestamp);
                 }
             }
         }
     })
 }
 
-function addMarker(lat, lng, icon, author, text) {
+function addMarker(lat, lng, icon, author, text, timestamp) {
+    var dateObj = new Date(timestamp);
+    var dateStr = dateObj.toLocaleString();
     var latLng = new google.maps.LatLng(lat, lng);
     var marker = new google.maps.Marker({
         position: latLng,
         map: map,
         icon: icon,
-        title: author
+        title: dateStr + " " + author
     });
     markers[markers.length] = marker;
 
-    var contentString = "@" + author + ": " + text;
+    var contentString = dateStr + ":@" + author + ": " + text;
     var infowindow = new google.maps.InfoWindow({
         content: contentString
     });
