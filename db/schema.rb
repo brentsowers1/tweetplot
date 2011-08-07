@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110729154137) do
     t.time     "timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.point    "location",    :limit => nil, :srid => 4326
+    t.point    "location",    :limit => nil
     t.float    "lat"
     t.float    "lng"
   end

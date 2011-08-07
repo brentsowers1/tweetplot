@@ -109,7 +109,7 @@ class SearchesController < ApplicationController
   def tweets
     @search = Search.find(params[:id])
     if params[:neLat]
-      @tweets = @search.search_tweets.find(:all, :conditions => ["location && ?",
+      @tweets = @search.search_tweets.find_all(:conditions => ["location && ?",
         Polygon.from_coordiantes([[
           [params[:swLng].to_f, params[:swLat].to_f],
           [params[:swLng].to_f, params[:neLat].to_f],
