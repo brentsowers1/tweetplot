@@ -12,6 +12,7 @@ function loadMap(center_lat, center_lon) {
         myOptions);
     doRequest(false);
     new PeriodicalExecuter(doUpdate, 30);
+    markers = [];
 }
 
 function doRequest(checkBounds) {
